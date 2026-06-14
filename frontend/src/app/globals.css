@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --mpit-orange: #FF6B35;
+    --mpit-red: #DC2626;
+    --mpit-navy: #1E3A8A;
+    --mpit-gold: #F59E0B;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+}
+
+/* MPIT Brand Colors */
+@layer components {
+  .mpit-gradient {
+    background: linear-gradient(135deg, #FF6B35 0%, #DC2626 100%);
+  }
+
+  .mpit-text {
+    color: #FF6B35;
+  }
+
+  /* Realistic Card Styles */
+  .card-simple {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .card-simple:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+    border-color: #FF6B35;
+  }
+
+  /* Institute Header Style */
+  .institute-header {
+    background: linear-gradient(to right, #1E3A8A 0%, #3B82F6 100%);
+    border-bottom: 4px solid #FF6B35;
+  }
+
+  /* Natural Button Styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-lg font-semibold;
+    @apply hover:from-orange-600 hover:to-red-700 transition-all duration-300;
+    @apply shadow-md hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-orange-500 text-orange-600 rounded-lg font-semibold;
+    @apply hover:bg-orange-500 hover:text-white transition-all duration-300;
+  }
+
+  /* Academic Style Section */
+  .section-academic {
+    background: #f9fafb;
+    border-top: 3px solid #FF6B35;
+  }
+
+  /* Lab Badge */
+  .lab-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(220, 38, 38, 0.1) 100%);
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    color: #DC2626;
+    font-weight: 600;
+  }
+
+  /* Stats Card */
+  .stat-card {
+    @apply bg-white p-6 rounded-xl border-l-4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  }
+
+  .stat-card.orange {
+    border-left-color: #FF6B35;
+  }
+
+  .stat-card.blue {
+    border-left-color: #1E3A8A;
+  }
+
+  .stat-card.gold {
+    border-left-color: #F59E0B;
+  }
+
+  /* Simple Hover Animation */
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Notice Board Style */
+  .notice-board {
+    @apply bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg;
+  }
+
+  /* Course Tag */
+  .course-tag {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+  }
+
+  .course-tag.ai {
+    @apply bg-purple-100 text-purple-700;
+  }
+
+  .course-tag.cyber {
+    @apply bg-red-100 text-red-700;
+  }
+
+  .course-tag.drone {
+    @apply bg-blue-100 text-blue-700;
+  }
+
+  .course-tag.printing {
+    @apply bg-green-100 text-green-700;
+  }
+
+  /* Minimal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FF6B35;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DC2626;
+  }
+}
+
+/* Typography - Academic Style */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1f2937;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Link Styles */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #FF6B35;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 107, 53, 0.2);
+  color: #DC2626;
+}
