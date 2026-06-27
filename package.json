@@ -1,0 +1,22 @@
+{
+  "name": "mpit-coe-platform",
+  "version": "1.0.0",
+  "description": "MPIT Centre of Excellence - EdTech Platform",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [
+    "edtech",
+    "mpit",
+    "nextjs",
+    "express"
+  ],
+  "author": "MPIT CoE",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

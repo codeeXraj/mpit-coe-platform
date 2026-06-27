@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Award, Users, BookOpen, TrendingUp } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowRight, Award, Users, BookOpen, TrendingUp, ShieldCheck } from 'lucide-react'
+import AdminLoginModal from '@/components/admin/AdminLoginModal'
 
 const HeroSection = () => {
+  const [showAdminLogin, setShowAdminLogin] = useState(false);
   return (
     <section className="relative bg-gradient-to-br from-blue-50 via-white to-orange-50 py-20 overflow-hidden">
       {/* Decorative Elements */}
@@ -72,11 +74,13 @@ const HeroSection = () => {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-              <Link href="/contact">
-                <button className="px-8 py-4 border-2 border-orange-500 text-orange-600 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all">
-                  Admission Enquiry
-                </button>
-              </Link>
+              <button
+                onClick={() => setShowAdminLogin(true)}
+                className="px-8 py-4 border-2 border-blue-500 text-blue-600 rounded-lg font-semibold hover:bg-blue-500 hover:text-white transition-all flex items-center justify-center gap-2"
+              >
+                <ShieldCheck className="w-5 h-5" />
+                Admin Login
+              </button>
             </motion.div>
 
             {/* Quick Stats */}
@@ -209,6 +213,12 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Admin Login Modal */}
+      <AdminLoginModal 
+        isOpen={showAdminLogin} 
+        onClose={() => setShowAdminLogin(false)} 
+      />
     </section>
   )
 }

@@ -31,7 +31,6 @@ const Header = () => {
     },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Portals', href: '#' },
   ]
 
   return (
@@ -52,26 +51,10 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Right Side - Location & Portals */}
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span className="font-medium">GORAKHPUR, UTTAR PRADESH</span>
-              </div>
-              <div className="relative group">
-                <button className="font-medium flex items-center gap-1 hover:text-orange-400 transition-colors">
-                  PORTALS
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                <div className="absolute top-full right-0 mt-2 w-48 bg-white text-gray-900 shadow-xl rounded-lg overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-                  <Link href="/dashboard" className="block px-4 py-3 hover:bg-gray-100 transition-colors">
-                    Student Portal
-                  </Link>
-                  <Link href="/admin" className="block px-4 py-3 hover:bg-gray-100 transition-colors">
-                    Admin Portal
-                  </Link>
-                </div>
-              </div>
+            {/* Right Side - Location Only */}
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4" />
+              <span className="font-medium">GORAKHPUR, UTTAR PRADESH</span>
             </div>
           </div>
         </div>
